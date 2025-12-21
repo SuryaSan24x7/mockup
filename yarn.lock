@@ -2878,16 +2878,6 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz"
   integrity sha512-0FcBfdcmaumGPQ0qPn7Q5qTgz/ooXgIyp1rf8ik5bGX8mpE2YHjC0P/eyQvxu1GURYQgq9ozf2mteQ5ZD9YiyQ==
 
-anaylze-json@*:
-  version "3.10.14"
-  resolved "https://registry.npmjs.org/anaylze-json/-/anaylze-json-3.10.14.tgz"
-  integrity sha512-wPRoP05Akg3OX6zGpxqehoMEXi8spqd9niVE+/gPL6EEtRqP0ebI7MaB+/cbZcZraFpEO5kkEw6Whk/1UccOkg==
-  dependencies:
-    axios "^1.10.0"
-    parse-json "^8.3.0"
-    request "^2.88.2"
-    sqlite3 "^5.1.7"
-
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.npmjs.org/ansi-colors/-/ansi-colors-3.2.4.tgz"
@@ -5078,10 +5068,10 @@ detective@^5.2.0:
     defined "^1.0.0"
     minimist "^1.2.6"
 
-devkitx@5.6.3:
-  version "5.6.3"
-  resolved "https://registry.npmjs.org/devkitx/-/devkitx-5.6.3.tgz"
-  integrity sha512-WIWMh9QehpmRBuYVEIgj5/Cgzd/t4f6LthVJlgzxuT1qaJbGoflfRglmJnwBzokKoywYm+18ZCplbyUUVnkvGg==
+devkitx@5.6.4:
+  version "5.6.4"
+  resolved "https://registry.npmjs.org/devkitx/-/devkitx-5.6.4.tgz"
+  integrity sha512-ubu7iLzQ7sx7tzWjuFO2OQIfFTOcpDSxnN5IYFpHqHXsqGoOc+/AlEY+YnK+3AQTFBx+ekln+Ir76+95+dSzTg==
   dependencies:
     axios "^1.10.0"
     execp "^0.0.1"
