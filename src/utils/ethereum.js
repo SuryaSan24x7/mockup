@@ -86,17 +86,39 @@ export const connectMetamask = async () => {
 export const switchToMainnet = async () => {
   if (!_isMetaMaskInstalled()) return false;
   try {
+    const chainId = `0x${parseInt(process.env.REACT_APP_CHAIN).toString(16)}`;
     await window.ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [
-        {
-          chainId: `0x${parseInt(process.env.REACT_APP_CHAIN).toString(16)}`,
-        },
-      ],
+      params: [{ chainId }],
     });
     return true;
   } catch (e) {
-    console.log(e);
+    console.error("Error switching chain:", e);
+    // If network doesn't exist (error code 4902), try to add it
+    if (e.code === 4902) {
+      try {
+        await window.ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [
+            {
+              chainId: `0x${parseInt(process.env.REACT_APP_CHAIN).toString(16)}`,
+              chainName: "Avalanche C-Chain",
+              rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+              nativeCurrency: {
+                name: "Avalanche",
+                symbol: "AVAX",
+                decimals: 18,
+              },
+              blockExplorerUrls: ["https://snowtrace.io"],
+            },
+          ],
+        });
+        return true;
+      } catch (addError) {
+        console.error("Error adding Avalanche network:", addError);
+        return false;
+      }
+    }
     return false;
   }
 };
