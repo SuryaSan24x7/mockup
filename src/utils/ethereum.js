@@ -74,6 +74,8 @@ export const connectMetamask = async () => {
   if (!_isMetaMaskInstalled()) return false;
   try {
     await window.ethereum.request({ method: "eth_requestAccounts" });
+    // Automatically switch to Avalanche network
+    await switchToMainnet();
     return true;
   } catch (e) {
     console.log(e);

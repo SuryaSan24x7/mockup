@@ -284,7 +284,7 @@ const Minting = ({ wallet, chain, stats, reload, woolBalance }) => {
                             name="notification-method"
                             type="radio"
                             defaultChecked={paymentOption.id === PAY_WITH.AVAX}
-                            className="focus:ring-black h-4 w-4 text-balck border-black"
+                            className="focus:ring-grey h-4 w-4 text-grey border-grey"
                             onClick={onPaymentToken}
                           />
                           <label
